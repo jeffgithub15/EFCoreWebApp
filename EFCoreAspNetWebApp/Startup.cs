@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ServiceLayer.Implementations;
 using ServiceLayer.Interfaces;
 
 namespace EFCoreAspNetWebApp
@@ -18,6 +19,7 @@ namespace EFCoreAspNetWebApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IBookService, BookService>();
             services.AddTransient<IDemo, Demo>();
             services.AddControllersWithViews();
 
