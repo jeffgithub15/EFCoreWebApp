@@ -15,10 +15,9 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">@item.Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">&nbsp;</h6>
-            <p class="card-text">@item.Description.ConcatStr(100)</p>
-            <a href="#" class="card-link">Book link</a>
-            <a href="#" class="card-link">Image link</a>
+            <h6 class="card-subtitle mb-2 text-muted">Publication Date:&nbsp;@item.PublishedOn.ToString("MM/dd/yyyy")</h6>
+            <p class="card-text" title="@item.Description" >@item.Description.ConcatStr(100)</p>
+            @Html.ActionLink("Change Publication Date", "ChangePubDate", "Admin", new { id = item.BookId }, null)
         </div>
     </div>
 

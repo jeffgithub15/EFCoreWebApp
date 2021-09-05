@@ -20,6 +20,8 @@ namespace EFCoreAspNetWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IChangePubDateService, ChangePubDateService>();
+            
             services.AddTransient<IDemo, Demo>();
             services.AddControllersWithViews();
 
