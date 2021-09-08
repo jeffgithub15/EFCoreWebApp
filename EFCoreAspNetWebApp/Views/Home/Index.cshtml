@@ -10,19 +10,73 @@
     <h1 class="display-4">All Books</h1>
 </div>
 
-@foreach (var item in Model)
-{
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">@item.Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Publication Date:&nbsp;@item.PublishedOn.ToString("MM/dd/yyyy")</h6>
-            <p class="card-text" title="@item.Description" >@item.Description.ConcatStr(100)</p>
-            @Html.ActionLink("Change Publication Date", "ChangePubDate", "Admin", new { id = item.BookId }, null)
-        </div>
+<div class="row">
+    <div class="col-4">
+        Sort By:
+        <select class="select-style">
+            <option value="price">Price</option>
+            <option value="publishby">Publish By</option>
+            <option value="title">Title</option>
+        </select>
     </div>
 
+    <div class="col-4">
+        <ul class="ul-filter">
+            <li>
+                Paging:&nbsp;
+            </li>
+            <li>
+                <input type="text" class="form-control" style="width:100px;" value="1">&nbsp;
+            </li>
+            <li>
+                &nbsp;- &nbsp;
+            </li>
+            <li>
+                <select class="select-style">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <hr />
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row" style="border:1px solid black">
+        <div class="col-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Publish By:&nbsp; @item.Publisher</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Publication On:&nbsp;@item.PublishedOn.ToString("MM/dd/yyyy")</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Price:&nbsp; @item.Price</h6>
+
+
+                    <p class="card-text" title="@item.Description">@item.Description.ConcatStr(200)</p>
+                    @*@Html.ActionLink("Change Publication Date", "ChangePubDate", "Admin", new { id = item.BookId }, null)*@
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="dropdown" style="">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Admin
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Change Pub Date</a></li>
+                    <li><a href="#">Remove Promotion</a></li>
+                    <li><a href="#">Add Review</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div>
-        
         <hr />
     </div>
 }
