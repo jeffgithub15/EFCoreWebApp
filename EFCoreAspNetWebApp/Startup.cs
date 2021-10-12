@@ -17,20 +17,55 @@ namespace EFCoreAspNetWebApp
 {
     public class Startup
     {
+        //public void ConfigureServices(IServiceCollection services)
+        //{
+        //    services.AddTransient<IDemo, Demo>();
+        //    services.AddControllersWithViews();
+        //}
+
+        //public void ConfigureServices(IServiceCollection services)
+        //{
+        //    services.AddControllersWithViews();
+
+        //    var connection = Configuration.
+        //      GetConnectionString("DefaultConnection");
+
+        //    services.AddDbContext<EfCoreContext>(
+        //        options => options.UseSqlServer(connection));
+        //}
+
+
+        // Using AddDbContextFactory
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IBookService, BookService>();
-            services.AddTransient<IChangePubDateService, ChangePubDateService>();
-            
-            services.AddTransient<IDemo, Demo>();
+            services.AddTransient<IBookService, BookServiceDbFactory>();
+
             services.AddControllersWithViews();
 
             var connection = Configuration.
               GetConnectionString("DefaultConnection");
-
-            services.AddDbContext<EfCoreContext>(
+            
+            services.AddDbContextFactory<EfCoreContext>(
                 options => options.UseSqlServer(connection));
         }
+
+
+
+        //public void ConfigureServices(IServiceCollection services)
+        //{
+        //    //services.AddTransient<IBookService, BookService>();
+        //    services.AddTransient<IBookService, BookServiceNotDI>(); 
+        //    services.AddTransient<IChangePubDateService, ChangePubDateService>();
+
+        //    services.AddTransient<IDemo, Demo>();
+        //    services.AddControllersWithViews();
+
+        //    var connection = Configuration.
+        //      GetConnectionString("DefaultConnection");
+
+        //    services.AddDbContext<EfCoreContext>(
+        //        options => options.UseSqlServer(connection));
+        //}
 
         public Startup(IConfiguration configuration)
         {

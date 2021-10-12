@@ -23,4 +23,4 @@ namespace DataLayer
                 .HasQueryFilter(p => !p.SoftDeleted);
         }
     }
-}
+}                                                                                         

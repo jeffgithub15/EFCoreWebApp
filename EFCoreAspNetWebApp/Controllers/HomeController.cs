@@ -15,7 +15,6 @@ namespace EFCoreAspNetWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IBookService _bookService;
         //private IDemo _demo;
         //public HomeController(IDemo demo)
         //{
@@ -23,7 +22,7 @@ namespace EFCoreAspNetWebApp.Controllers
         //}
 
 
-
+        private readonly IBookService _bookService;
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger, IBookService bookService)

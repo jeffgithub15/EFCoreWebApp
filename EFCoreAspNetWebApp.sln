@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreAspNetWebApp", "EFCoreAspNetWebApp\EFCoreAspNetWebApp.csproj", "{A87BBBDD-9F88-4541-8CF9-A20267CD491C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{9605FC51-BF01-4AA1-A997-4064BB701CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{9605FC51-BF01-4AA1-A997-4064BB701CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{383395BA-01C7-4BE0-B58D-C66726248BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{383395BA-01C7-4BE0-B58D-C66726248BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfTest", "EfTest\EfTest.csproj", "{221B4524-4142-4522-957F-FDB324D9B3AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfTest", "EfTest\EfTest.csproj", "{221B4524-4142-4522-957F-FDB324D9B3AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{FEABE06A-89DE-44B7-A489-02CCCA947FE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{221B4524-4142-4522-957F-FDB324D9B3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{221B4524-4142-4522-957F-FDB324D9B3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{221B4524-4142-4522-957F-FDB324D9B3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEABE06A-89DE-44B7-A489-02CCCA947FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEABE06A-89DE-44B7-A489-02CCCA947FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEABE06A-89DE-44B7-A489-02CCCA947FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEABE06A-89DE-44B7-A489-02CCCA947FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
