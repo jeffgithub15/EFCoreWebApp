@@ -1,4 +1,5 @@
-﻿using DataLayer.Models;
+﻿using DataLayer.ModelConfigs;
+using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,32 @@ namespace DataLayer
     {
         public EfCoreContext(
             DbContextOptions<EfCoreContext> options)
-            : base(options)
-        {
-
-        }
+            : base(options) { }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<PriceOffer> PriceOffers { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating
+            (ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
-                .HasQueryFilter(p => !p.SoftDeleted);
+            modelBuilder.ApplyConfiguration(new BookConfig());
+
+
+
+
+            //modelBuilder.Entity<Book>()
+            //.Property(x => x.PublishedOn)
+            //.HasColumnType("date");
+
+            //modelBuilder.Entity<Book>()
+            //    .Property(x => x.ImageUrl)
+            //    .IsUnicode(false);
+
+
+            //modelBuilder.Entity<Book>()
+            //    .HasQueryFilter(p => !p.SoftDeleted);
         }
     }
-}                                                                                         
+}
