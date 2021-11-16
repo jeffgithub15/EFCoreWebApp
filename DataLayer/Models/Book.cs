@@ -7,12 +7,15 @@ namespace DataLayer.Models
 {
     public class Book
     {
+        [Key]
         public int BookId { get; set; }
 
         [Required]
         [MaxLength(256)]
         public string Title { get; set; }
+
         public string Description { get; set; }
+
         public DateTime PublishedOn { get; set; }
 
         [MaxLength(64)]

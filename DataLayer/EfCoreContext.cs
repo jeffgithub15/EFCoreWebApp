@@ -21,9 +21,18 @@ namespace DataLayer
         protected override void OnModelCreating
             (ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SomeEntity>()
+                .HasKey(x => x.NonStandardKeyName);
+
+            modelBuilder.Entity<BookAuthor>()
+               .HasKey(x => new { x.BookId, x.AuthorId });
+
+
+
             modelBuilder.ApplyConfiguration(new BookConfig());
-
-
+            modelBuilder.ApplyConfiguration(new BookAuthorConfig());
+            modelBuilder.ApplyConfiguration(new PriceOfferConfig());
+            modelBuilder.ApplyConfiguration(new LineItemConfig()); 
 
 
             //modelBuilder.Entity<Book>()
@@ -39,4 +48,4 @@ namespace DataLayer
             //    .HasQueryFilter(p => !p.SoftDeleted);
         }
     }
-}
+}                                                                                                        

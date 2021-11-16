@@ -20,4 +20,5 @@ namespace DataLayer.ModelConfigs
             builder.HasIndex(x => x.PublishedOn);
         }
     }
-}
+}                                                                                                                            
+ 
