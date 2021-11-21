@@ -11,7 +11,7 @@ namespace DataLayer.ModelConfigs
     {
         public void Configure(EntityTypeBuilder<PriceOffer> builder)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
